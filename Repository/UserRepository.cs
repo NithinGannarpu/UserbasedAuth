@@ -23,7 +23,7 @@ namespace UserbasedAuth.Repository
         {
             if (loginDetails.Email != null && loginDetails.Password != null)
             {
-                var userExists = users.userss.Select(x => x.Email == loginDetails.Email && x.Password == loginDetails.Password).First();
+                var userExists = users.userss.Any(x => x.Email == loginDetails.Email && x.Password == loginDetails.Password);
                 return userExists;
             }
             return false;
